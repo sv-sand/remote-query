@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.18">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаПроверитьПодключение" id="34">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПроверитьПодключение</CommandName>
+				<ExtendedTooltip name="ФормаПроверитьПодключениеРасширеннаяПодсказка" id="35"/>
+			</Button>
+			<Button name="ФормаСправка" id="39">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Help</CommandName>
+				<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+				<ExtendedTooltip name="ФормаСправкаРасширеннаяПодсказка" id="40"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКодНаименование" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа код наименование</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ShowTitle>false</ShowTitle>
+			<ThroughAlign>Use</ThroughAlign>
+			<ExtendedTooltip name="ГруппаКодНаименованиеРасширеннаяПодсказка" id="26"/>
+			<ChildItems>
+				<InputField name="Наименование" id="4">
+					<DataPath>Объект.Description</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НаименованиеКонтекстноеМеню" id="5"/>
+					<ExtendedTooltip name="НаименованиеРасширеннаяПодсказка" id="6"/>
+				</InputField>
+				<InputField name="Код" id="1">
+					<DataPath>Объект.Code</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="КодКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Идентификатор" id="7">
+			<DataPath>Объект.Идентификатор</DataPath>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Уникальный идентификатор настройки для доступа из внешней базы</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ИдентификаторКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ИдентификаторРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<UsualGroup name="ГруппаПодключение" id="32">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаПодключениеРасширеннаяПодсказка" id="33"/>
+			<ChildItems>
+				<InputField name="ВидПодключения" id="10">
+					<DataPath>Объект.ВидПодключения</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ВидПодключенияКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ВидПодключенияРасширеннаяПодсказка" id="12"/>
+					<Events>
+						<Event name="OnChange">ВидПодключенияПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="СтрокаПодключения" id="13">
+					<DataPath>Объект.СтрокаПодключения</DataPath>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Строка подключения</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СтрокаПодключенияКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="СтрокаПодключенияРасширеннаяПодсказка" id="15"/>
+				</InputField>
+				<InputField name="ВерсияПротокола" id="36">
+					<DataPath>Объект.ВерсияПротокола</DataPath>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>8</MaxWidth>
+					<DropListButton>true</DropListButton>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ВерсияПротоколаКонтекстноеМеню" id="37"/>
+					<ExtendedTooltip name="ВерсияПротоколаРасширеннаяПодсказка" id="38"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаАвторизация" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Авторизация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа авторизация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="ГруппаАвторизацияРасширеннаяПодсказка" id="28"/>
+			<ChildItems>
+				<InputField name="ИмяПользователя" id="16">
+					<DataPath>Объект.ИмяПользователя</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ИмяПользователяКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ИмяПользователяРасширеннаяПодсказка" id="18"/>
+				</InputField>
+				<InputField name="Пароль" id="29">
+					<DataPath>Пароль</DataPath>
+					<PasswordMode>true</PasswordMode>
+					<ContextMenu name="ПарольКонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ПарольРасширеннаяПодсказка" id="31"/>
+					<Events>
+						<Event name="OnChange">ПарольПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Комментарий" id="22">
+			<DataPath>Объект.Комментарий</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<EditMode>EnterOnInput</EditMode>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="КомментарийКонтекстноеМеню" id="23"/>
+			<ExtendedTooltip name="КомментарийРасширеннаяПодсказка" id="24"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:CatalogObject.вз_НастройкиПодключения</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Пароль" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пароль</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ПроверитьПодключение" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить подключение</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьПодключение</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+	</Commands>
+</Form>
